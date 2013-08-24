@@ -1,0 +1,9 @@
+setup.py
+webiopi.py
+WebIOPi.egg-info/PKG-INFO
+WebIOPi.egg-info/SOURCES.txt
+WebIOPi.egg-info/dependency_links.txt
+WebIOPi.egg-info/top_level.txt
+native/bridge.c
+native/cpuinfo.c
+native/gpio.c

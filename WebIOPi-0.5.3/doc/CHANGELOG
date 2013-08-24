@@ -1,0 +1,63 @@
+=Current version : 0.5.2 (12/21/12)=
+
+==svn repository trunk==
+   Added board revision REST URI (submitted by Andreas Riegg)
+   Added encrypted passwd file to store credentials used for HTTP authentication
+   Added webiopi-passwd command-line program to generate passwd file
+   Moved demo to examples/custom folder, added examples/basic
+   Changed /dev/mem access to allow webiopi import without root privileges when not using GPIOs
+   Disabled update checker to avoid "Update available" link
+   Improved GPIO error handling
+   Fixed encoding issue with python 2.x giving a blank page
+   Fixed setup script
+
+==0.5.2 (12/21/12 - PiStore only)==
+   Fixed blank page and file handling when server start at boot
+   Improved macros handling to allow zeo, one or more args
+   Added server loop helper
+   Improved setup.sh for the PiStore
+   Added play.sh for the PiStore to open the browser
+
+==0.5.1 (11/16/12)==
+===New Features===
+   REV 2 boards support
+   Added setup script to ease WebIOPi install
+   Use WebIOPi in your own Python scripts
+   Login/Password protection
+   Software PWM
+   Binary sequence output
+
+===Python Server & REST API===
+   Usable as a library
+   Added Python 3 support
+   Removed RPi.GPIO library dependency
+   Improved security
+   Improved file serving
+   Improved REST API
+   Added ability to use custom REST macro
+   Added ability to output a single pulse
+   Added ability to output a binary sequence
+   Added software PWM
+
+===Javascript Library===
+   Improved and simplified
+   Added ability to create custom buttons with one or two callbacks (mousedown and mouseup)
+   Added helpers for new REST functions (macro, pulse, sequence, PWM, ...)
+
+===Other changes===  
+   PHP Server discontinued
+
+
+==0.3 (08/27/12)==
+   Fixed security issue in the Python server
+   Python server general improvements
+   Python server display real IP
+   Allow PHP5 < 5.4 (Works on Debian wheezy)
+   Added update tracking
+   Refactored Javascript code to be used as a library
+   Changed IDs and CSS naming
+   Added expert app
+
+
+==0.2 (08/21/12)==
+   Initial release

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>サーボモーターを動かす - Raspberry Piで遊ぼう</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="style.css" media="screen">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="webiopi_proxy.js"></script>
+<script type="text/javascript">
+var USE_API_PROXY = false;
+var port = 18;	//GPIO18
+var val = 0;	//初期値
+$(function() {
+	//初期設定: GPIO18をPWMモードにして、角度を0にする
+	set_gpio_function(port,"pwm",function(){
+		set_gpio_servo(port,0);
+	});
+
+	//ボタンが押されたら角度を変える
+	$('#btn1').click( function(){
+		set_gpio_servo(port,-135);
+		$('#slider').val(-135);
+	});
+	$('#btn2').click( function(){
+		set_gpio_servo(port,-65);
+		$('#slider').val(-65);
+	});
+	$('#btn3').click( function(){
+		set_gpio_servo(port,5);
+		$('#slider').val(5);
+	});
+	$('#btn4').click( function(){
+		set_gpio_servo(port,75);
+		$('#slider').val(75);
+	});
+
+	//スライダーが動いたら角度を変える
+	$('#slider').change(function(){
+		set_gpio_servo(port, $(this).val());
+	});
+
+});
+</script>
+</head>
+<body>
+<div id="wrapper">
+
+<header>
+	<div class="header">
+		サーボモーターを動かす
+	</div>
+</header>
+
+<nav>
+	<div class="nav-zero">
+		<ul>
+			<li id="btn1" class="ledoff">GPIO<br />18<br />-135°</li>
+			<li id="btn2" class="ledoff">GPIO<br />18<br />-65°</li>
+			<li id="btn3" class="ledoff">GPIO<br />18<br />5°</li>
+			<li id="btn4" class="ledoff">GPIO<br />18<br />75°</li>
+		</ul>
+		<form>
+		<input type="range" id="slider" min="-135" max="75" step="-5" value="0" style="width:100%">
+		</form>
+	</div>
+	<div class="clear"></div>
+</nav>
+
+<div id="contents">
+	<section>
+		<div class="wmain">
+			ボタンを押すとサーボモーターの角度が変わります。<br />
+			スライダーでも角度を変更できます。
+		</div>
+	</section>
+</div>
+
+<footer>
+	<div id="footer">
+		Raspberry Piで遊ぼう<br />
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

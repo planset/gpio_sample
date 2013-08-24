@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+input {
+	margin: 5px 5px 5px 5px;
+	width: 50px;
+}
+
+.Description {
+	display: inline;
+}
